@@ -66,6 +66,47 @@ public class Endereco {
 	public Estado getEstado() {
 		return estado;
 	}
+	
+	public Regiao getRegiao() {
+		
+		switch (estado) {
+			case RR:
+			case AP:
+			case AM:
+			case PA:
+			case AC:
+			case RO:
+			case TO:
+				return Regiao.NORTE;
+			case MA:
+			case PI:
+			case CE:
+			case RN:
+			case PB:
+			case PE:
+			case AL:
+			case SE:
+			case BA:
+				return Regiao.NORDESTE;
+			case MT:
+			case DF:
+			case GO:
+			case MS:
+				return Regiao.CENTROOESTE;
+			case MG:
+			case ES:
+			case RJ:
+			case SP:
+				return Regiao.SUDESTE;
+			case PR:
+			case SC:
+			case RS:
+				return Regiao.SUL;
+			default:
+				return null;
+		}
+		
+	}
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
